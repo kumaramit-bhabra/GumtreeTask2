@@ -35,7 +35,6 @@ public class UserServiceImplTest
     {
         DbUser dbuser = DbUser.Builder.aDbUser().withId(1).withFirstname("Gumtree").withSurname("Test").build();
         when(usersGateway.getById(1)).thenReturn(Optional.of(dbuser));
-
         when(userAdapter.adapt(dbuser)).thenReturn(User.Builder.aUser().withId(1).withFullName("Gumtree Test").build());
 
         assertEquals(1, userService.getUser(1).get().getId());

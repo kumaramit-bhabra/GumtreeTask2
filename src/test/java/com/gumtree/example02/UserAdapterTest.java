@@ -22,7 +22,7 @@ public class UserAdapterTest
     public void testUserId()
     {
         // Creating the stub of DbUser Object with the attributes that are required for User
-        DbUser dbuser = DbUser.Builder.aDbUser().withId(1).withFirstname("gumtree").withSurname("test").build();
+        DbUser dbuser = DbUser.Builder.aDbUser().withId(1).withFirstname("Steve").withSurname("K").build();
         assertEquals(1, userAdapter.adapt(dbuser).getId());
     }
 
@@ -31,8 +31,8 @@ public class UserAdapterTest
     @Test
     public void testUserName()
     {
-        DbUser dbuser = DbUser.Builder.aDbUser().withId(1).withFirstname("gumtree").withSurname("test").build();
-        assertEquals("gumtree test", userAdapter.adapt(dbuser).getFullName());
+        DbUser dbuser = DbUser.Builder.aDbUser().withId(1).withFirstname("Richard").withSurname("Max").build();
+        assertEquals("Richard Max", userAdapter.adapt(dbuser).getFullName());
         assertEquals(false, userAdapter.adapt(dbuser).isPrivate());
     }
 
@@ -41,7 +41,7 @@ public class UserAdapterTest
     @Test
     public void testIfPrivate()
     {
-        DbUser dbuser = DbUser.Builder.aDbUser().withId(1).withFirstname("gumtree").withSurname("test").withIsPrivate(true).build();
+        DbUser dbuser = DbUser.Builder.aDbUser().withId(1).withFirstname("Private").withSurname("Seller").withIsPrivate(true).build();
         assertEquals(true, userAdapter.adapt(dbuser).isPrivate());
     }
 }
